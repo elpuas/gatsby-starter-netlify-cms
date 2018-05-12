@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import { Header, Icon } from 'semantic-ui-react'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -11,7 +12,15 @@ export default class IndexPage extends React.Component {
       <section className="section">
         <div className="container">
           <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+            <h1 className="hero has-text-weight-bold is-size-2">We specialize in building awesome digital products</h1>
+            <Header as='h3'>
+              <Icon.Group size='large'>
+                <Icon name='twitter' />
+                <Icon corner name='add' />
+              </Icon.Group>
+              Add on Twitter
+            </Header>
+            <h2 className="has-text-weight-bold is-size-3">Latest Stories</h2>
           </div>
           {posts
             .filter(post => post.node.frontmatter.templateKey === 'blog-post')
@@ -57,7 +66,7 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 400)
+          excerpt(pruneLength: 200)
           id
           fields {
             slug
