@@ -1,9 +1,8 @@
 ---
-templateKey: 'blog-post'
-title: 'This is a New Post'
-date: 2017-01-04T15:04:10.000Z
-description: >-
-  New Post.
+templateKey: blog-post
+title: This is a New Post
+date: '2018-05-12T10:04:10-04:00'
+description: New Post.
 tags:
   - italia
   - green beans
